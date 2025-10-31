@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viktorina Tizimi</title>
+    <link rel="stylesheet" href="viktorina-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigatsiya -->
+      <nav class="nav-tabs">
+        <button class="nav-btn active" onclick="showTab('questions')">
+          📝 Savol qo'shish
+        </button>
+        <button class="nav-btn" onclick="showTab('quiz')">🎯 Viktorina</button>
+        <button class="nav-btn" onclick="showTab('results')">
+          🏆 Natijalar
+        </button>
+      </nav>
+
+      <!-- Savol qo'shish bo'limi -->
+      <div id="questionsTab" class="tab-content active">
+        <div class="card">
+          <h2>Savol qo'shish</h2>
+
+          <div class="question-form">
+            <div class="form-group">
+              <label for="questionText">Savol matni:</label>
+              <textarea
+                id="questionText"
+                placeholder="Bu yerga savol yozing..."
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Takrorlash rejimi:</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="repeatMode" value="allow" checked />
+                  <span>Savolar takrorlansin</span>
+                </label>
+                <label>
+                  <input type="radio" name="repeatMode" value="no-repeat" />
+                  <span>Savolar takrorlanmasin</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button onclick="addQuestion()" class="btn btn-primary">
+                ➕ Savol qo'shish
+              </button>
+              <button onclick="clearAllQuestions()" class="btn btn-danger">
+                🗑️ Barchani o'chirish
+              </button>
+            </div>
+          </div>
+
+          <div class="questions-list">
+            <h3>Savollar ro'yxati (<span id="questionCount">0</span> ta)</h3>
+            <div id="questionsList"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Viktorina bo'limi -->
+      <div id="quizTab" class="tab-content">
+        <div class="quiz-container">
+          <!-- Talaba ma'lumotlari -->
+          <div class="student-section">
+            <div class="student-card">
+              <div id="selectedStudent">Talaba tanlanmagan</div>
+              <div class="student-image">
+                <img id="studentImage" src="default.svg" alt="Talaba rasmi" />
+              </div>
+            </div>
+
+            <div class="quiz-controls">
+              <button
+                onclick="selectRandomStudent()"
+                class="btn btn-primary"
+                id="nextStudentBtn"
+              >
+                🎲 Keyingi omadli talaba
+              </button>
+              <button onclick="finishQuiz()" class="btn btn-warning">
+                🏁 Testni tugatish
+              </button>
+            </div>
+          </div>
+
+          <!-- Savol bo'limi -->
+          <div class="question-section">
+            <div class="question-display">
+              <div id="currentQuestion">Savol ko'rsatiladi...</div>
+              <button
+                onclick="showRandomQuestion()"
+                class="btn btn-secondary"
+                id="showQuestionBtn"
+                disabled
+              >
+                📋 Savol ko'rsatish
+              </button>
+            </div>
+
+            <div class="answer-section">
+              <div class="answer-buttons">
+                <button
+                  onclick="markAnswer(true)"
+                  class="btn btn-success"
+                  disabled
+                  id="correctBtn"
+                >
+                  ✅ To'g'ri
+                </button>
+                <button
+                  onclick="markAnswer(false)"
+                  class="btn btn-danger"
+                  disabled
+                  id="incorrectBtn"
+                >
+                  ❌ Noto'g'ri
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status panel -->
+          <div class="status-panel">
+            <div class="status-item">
+              <span class="status-label">Qolgan talabalar:</span>
+              <span id="remainingStudents">0</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Joriy talaba savollari:</span>
+              <span id="currentStudentQuestions">0</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Qolgan savolar:</span>
+              <span id="remainingQuestions">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Natijalar bo'limi -->
+      <div id="resultsTab" class="tab-content">
+        <div class="results-container">
+          <h2>🏆 Viktorina natijalari</h2>
+          <div id="resultsDisplay"></div>
+          <button onclick="resetQuiz()" class="btn btn-warning">
+            🔄 Yangi viktorina boshlash
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="viktorina-script.js"></script>
+  </body>
+</html>
