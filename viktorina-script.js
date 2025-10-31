@@ -11,6 +11,11 @@ const allStudents = [
   { name: "Tatauva Ruqiya", image: "random/ruqiya.jpg" },
   { name: "Tajimurodov Nematullo", image: "random/nematullo.jpg" },
   { name: "Manopova Mohinur", image: "random/mohinur.jpg" },
+  { name: "Xolboyev Nodirbek", image: "random/nodirbek.jpg" },
+  { name: "Hayitov Hamidullo", image: "random/hamidullo.jpg" },
+  { name: "O'roqov Behruz", image: "random/Behruz_imresizer.jpg" },
+  { name: "Raxmatova Sabrina", image: "random/Sabrina_imresizer.jpg" },
+  { name: "Dilobar", image: "random/dilobar.jpg" },
 ];
 
 // Toast funksiyasi
