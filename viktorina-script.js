@@ -7,7 +7,7 @@ const allStudents = [
   { name: "Djurayev Elnur", image: "random/elnur.jpg" },
   { name: "Hayitmurodov Asomiddin", image: "random/asomiddin_1.jpg" },
   { name: "Ochildiyev Begali", image: "random/begali.jpg" },
-  { name: "Rahmonov Shoxrux", image: "random/shoxrux.png" },
+  { name: "Rahmonov Shoxrux", image: "random/shoxrux_1.jpg" },
   { name: "Tatauva Ruqiya", image: "random/ruqiya.jpg" },
   { name: "Tajimurodov Nematullo", image: "random/nematullo.jpg" },
   { name: "Manopova Mohinur", image: "random/mohinur.jpg" },
