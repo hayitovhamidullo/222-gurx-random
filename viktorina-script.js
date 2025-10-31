@@ -1,7 +1,7 @@
 // Talabalar ma'lumotlari
 const allStudents = [
   { name: "Abdurasulov Lazizbek", image: "random/laziz.jpg" },
-  { name: "Alimardonova Dilorom", image: "random/A_Dilobar.png" },
+  { name: "Alimardonova Dilorom", image: "random/A_Dilobar_imresizer.jpg" },
   { name: "Bo'ronov Jamshid", image: "random/jamshid.jpg" },
   { name: "Davlatova Kumush", image: "random/kumush.jpg" },
   { name: "Djurayev Elnur", image: "random/elnur.jpg" },
